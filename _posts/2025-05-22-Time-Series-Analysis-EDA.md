@@ -1,3 +1,11 @@
+---
+layout: post
+title: 시계열 데이터 EDA 
+date: 2025-05-23 18:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
 ## 1. 시각화를 통한 시계열 데이터 탐색
 
 
@@ -104,7 +112,7 @@ plt.show()
 
 
     
-![png](output_5_0.png)
+![20250523_output_5_0](/assets/img/posts/20250523_output_5_0.png)
     
 
 
@@ -140,7 +148,7 @@ plt.show()
 
 
     
-![png](output_8_0.png)
+![20250523_output_8_0](/assets/img/posts/20250523_output_8_0.png)
     
 
 
@@ -163,7 +171,7 @@ plt.show()
 
 
     
-![png](output_11_0.png)
+![20250523_output_11_0](/assets/img/posts/20250523_output_11_0.png)
     
 
 
@@ -178,7 +186,7 @@ plt.show()
 
 - 자기 상관: 시계열 데이터에서 일정 간격이 있는 값들 사이의 상관관계를 의미
 
-![image.png](attachment:image.png)
+![20250523_03](/assets/img/posts/20250523_03.png)
 
 - 사인함수(왼쪽)와 사인함수의 ACF Plot(오른쪽)
 - 임계값이 파란색으로 나타나있다.
@@ -189,7 +197,7 @@ plt.show()
 - 편자기상관: 자신에 대한 그 시차의 편상관을 의미함.
 > 두 시점사이의 전체 상관관계에서 그 사이 다른 시점의 조건부 상관관계를 뺀 것
 
-![image.png](attachment:image.png)
+![20250523_04](/assets/img/posts/20250523_04.png)
 
 - 사인함수(왼쪽)와 사인함수의 PACF Plot(오른쪽)
 - ACF에서 불필요한 중복 관계가 제거된 것을 볼 수 있다.
@@ -221,7 +229,7 @@ plt.show()
 
 
     
-![png](output_27_0.png)
+![20250523_output_27_0](/assets/img/posts/20250523_output_27_0.png)
     
 
 
@@ -233,7 +241,7 @@ plt.show()
 
 
     
-![png](output_28_0.png)
+![20250523_output_28_0](/assets/img/posts/20250523_output_28_0.png)
     
 
 
@@ -249,7 +257,7 @@ plt.show()
 
 
     
-![png](output_29_1.png)
+![20250523_output_29_1](/assets/img/posts/20250523_output_29_1.png)
     
 
 
@@ -257,7 +265,7 @@ plt.show()
 
 1부터 100까지 선형적으로 증가하는 데이터의 ACF plot과 PACF plot이다.
 
-![image.png](attachment:image.png)
+![20250523_05](/assets/img/posts/20250523_05.png)
 
 - 크게 유의미한 정보를 보여주지 못함
 - 값들은 단순히 균등하게 증가하는 것이기 때문에, PACF와 ACF로부터도 크게 유용한 정보를 얻을 수 없다.
@@ -270,7 +278,7 @@ plt.show()
 
 
     
-![png](output_34_0.png)
+![20250523_output_34_0](/assets/img/posts/20250523_output_34_0.png)
     
 
 
@@ -282,7 +290,7 @@ plt.show()
 
 
     
-![png](output_35_0.png)
+![20250523_output_35_0](/assets/img/posts/20250523_output_35_0.png)
     
 
 
@@ -298,7 +306,7 @@ plt.show()
 
 
     
-![png](output_36_1.png)
+![20250523_output_36_1](/assets/img/posts/20250523_output_36_1.png)
     
 
 
