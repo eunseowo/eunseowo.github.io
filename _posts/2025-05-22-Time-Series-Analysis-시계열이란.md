@@ -8,7 +8,7 @@
 
 ### 2-1. 시계열의 요소
 
-![image.png](attachment:image.png)
+![20250523_01](/assets/img/posts/20250523_01.png)
 
 - **추세 (Trend)**
     - 장기적으로 증가하거나, 감소하는 경향성이 존재하는 것을 의미한다.
@@ -27,7 +27,7 @@
 
 ### 2-2. 요소별로 시계열 분해하기
 
-![image.png](attachment:image.png)
+![20250523_02](/assets/img/posts/20250523_02.png)
 
 - `observed` : 원래의 값(raw data)
 - `trend` : 확정적 추세만을 뽑아서 시각화 한 것
@@ -60,16 +60,6 @@
         - 모든 적률(moments)이 시간과 무관하게 일정한 시계열 (기저를 이루는 확률분포가 시간에 무관하게 언제나 일정)
             - **기저(Basis)** : 분석 대상이 되는 시계열 데이터를 이루는 확률적 과정을 의미함.
     - **약정상성(Weak Stationarity)** : 시간의 흐름에 따른 일정한 평균, 분산, 공분산만을 갖는 확률과정
-        - **약정상 시계열(weak stationary time series)**의 정의
-            1.  **평균이 일정함**
-               $$ \mathbb{E}[X_t] = \mu, \quad \forall t $$
-
-            2. **분산이 일정함**
-               $$ \text{Var}(X_t) = \sigma^2, \quad \forall t $$
-
-            3. **공분산이 시차(lag)에만 의존함**
-               $$ \text{Cov}(X_t, X_{t+h}) = \gamma(h), \quad \forall t, h \in \mathbb{Z} $$
-                - 즉, 약정상성을 띠는 시계열 데이터는 어느 시점(t)에 관측해도 확률 과정의 성질(E(Xt), Var(Xt))이 변하지 않는다.
 ---
                
 - **비정상성(Non-Stationary)** : 정상성과 반대로 시간의 흐름에 따라 통계적 특성이 변화하는 것
@@ -178,7 +168,7 @@ plt.show()
 
 
     
-![png](output_29_0.png)
+![20250523_output_29_0](/assets/img/posts/20250523_output_29_0.png)
     
 
 
@@ -195,7 +185,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)
+![20250523_output_30_0](/assets/img/posts/20250523_output_30_0.png)
     
 
 
@@ -235,19 +225,16 @@ df0.plot(legend=True, subplots=True, title='smoothed')
 
 
     
-![png](output_34_1.png)
+![20250523_output_34_1](/assets/img/posts/20250523_output_34_1.png)
     
 
 
 
     
-![png](output_34_2.png)
+![20250523_output_34_2](/assets/img/posts/20250523_output_34_2.png)
     
 
 
-$$
-y_t^* = y_t - y_{t-k}
-$$
 - '차분'이란 시계열 데이터들의 시간상의 차이를 구하는 것
 - 한 번의 차이를 구하는 것을 '1차 차분' 이라고 하며, 1차 차분값을 다시 차분하는 것을 '2차 차분'이라고 함.
 - 차분은 데이터의 길이가 충분할 경우 여러 번 수행될 수도 있다.
@@ -272,13 +259,13 @@ df1.plot(legend=True, subplots=True, title='diff')
 
 
     
-![png](output_36_1.png)
+![20250523_output_36_1](/assets/img/posts/20250523_output_36_1.png)
     
 
 
 
     
-![png](output_36_2.png)
+![20250523_output_36_2](/assets/img/posts/20250523_output_36_2.png)
     
 
 
