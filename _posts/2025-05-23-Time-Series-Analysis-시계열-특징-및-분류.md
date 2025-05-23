@@ -3,7 +3,7 @@ layout: post
 title: 시계열 특징 및 분류
 date: 2025-05-23 19:04:00 +0900
 categories: [Time_Series_Analysis]
-tags: [Time_Series_Analysis, tsfresh,]
+tags: [Time_Series_Analysis]
 ---
 
 ## 1. 시계열 데이터의 특징
