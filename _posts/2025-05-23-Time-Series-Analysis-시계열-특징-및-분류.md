@@ -1,3 +1,11 @@
+---
+layout: post
+title: 시계열 특징 및 분류
+date: 2025-05-23 19:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
 ## 1. 시계열 데이터의 특징
 
 ### 1-1. 주요한 시계열 요약 통계 특징
@@ -1469,7 +1477,7 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+![20250523_output_32_0](/assets/img/posts/20250523_output_32_0.png)
     
 
 
@@ -1481,7 +1489,7 @@ plt.show()
 
 
     
-![png](output_33_0.png)
+![20250523_output_33_0](/assets/img/posts/20250523_output_33_0.png)
     
 
 
