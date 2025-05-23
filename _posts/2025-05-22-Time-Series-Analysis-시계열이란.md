@@ -1,3 +1,12 @@
+---
+layout: post
+title: 시계열이란?
+date: 2025-05-23 17:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
+
 ## 1. 시계열 데이터
 
 - **시계열 데이터** : 일정 시간 간격으로 배치된 데이터들의 수열, 시간적으로 종속된 모든 데이터는 시계열에 해당함.
