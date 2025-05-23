@@ -3,7 +3,7 @@ layout: post
 title: 시계열 데이터 EDA 
 date: 2025-05-23 18:04:00 +0900
 categories: [Time_Series_Analysis]
-tags: [Time_Series_Analysis]
+tags: [Time_Series_Analysis, EDA]
 ---
 
 ## 1. 시각화를 통한 시계열 데이터 탐색
