@@ -1,3 +1,12 @@
+---
+layout: post
+title: 통계 모델을 활용한 시계열 예측 [ARIMA]
+date: 2025-05-26 16:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
+
 ## 1. 금융 시계열의 특징
 
 |용어|설명|
@@ -10,8 +19,7 @@
 - 금융에서는 자산의 가치 자체 보다는 수익에 대해서 더 높은 관심을 지니고 있음.
 - 금융에서 활용되는 두 가지 수익률(Return)에 대해 알아보자.
 
-
-![image.png](attachment:image.png)
+![250526_1.png](/assets/img/posts/250526_1.png)
 
 **다기간 수익률** : 단일 보유 기간 동안의 수익률을 여러 기간에 걸쳐서 나타낸 값 (전체 수익률을 계산하는 방법)
 
@@ -52,7 +60,7 @@
 
 ## 2. 금융 시계열을 위한 모델, ARCH
 
-![image.png](attachment:image.png)
+![250526_2.png](/assets/img/posts/250526_2.png)
 
 - 수익률의 변동성이 높아지는 시기는 하나의 군집(cluster)처럼 뭉쳐 있는 것을 볼 수 있음.
     - Cluster : 시계열 데이터를 시각화 했을 때, 특정 기간 이후에 충격이 나타나는 현상
@@ -65,7 +73,7 @@
 - 변동성을 예측하는 모델
 - 일반적으로 시간에 따라 변하는 변동성과 변동성 클러스터링을 나타내는 금융 시계열을 모델링하는 데 사용
 
-![image.png](attachment:image.png)
+![250526_3.png](/assets/img/posts/250526_3.png)
 
 - `ARCH(m)`은 m이라는 파라미터를 가지고 있으며 자산의 변동성을 자기 회귀를 통해 모델링함.
 - Python 에서는 `arch` 라이브러리를 통해 손쉽게 활용 가능
@@ -75,7 +83,7 @@
 - ARCH에서 파생된 모델
 - 오차분산에 대해 ARMA를 가정한 모델
 
-![image.png](attachment:image.png)
+![250526_4.png](/assets/img/posts/250526_4.png)
 
 - 자산 변동성에 AR뿐만 아니라 MA도 함께 적용한 모델링함.
 - 자산 변동성에 ARMA를 적용함으로써 높은 수준의 변동성 예측이 가능
