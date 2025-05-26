@@ -621,15 +621,6 @@ def preprocess_function(examples):
 tokenized_my_data = my_data.map(preprocess_function, batched=True)
 ```
 
-
-    Map:   0%|          | 0/4 [00:00<?, ? examples/s]
-
-
-
-    Map:   0%|          | 0/2 [00:00<?, ? examples/s]
-
-
-
 ```python
 tokenized_my_data['train'][0]
 ```
