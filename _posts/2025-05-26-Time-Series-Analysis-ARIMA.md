@@ -1,3 +1,11 @@
+---
+layout: post
+title: 금융 시계열의 특징 [ARIMA]
+date: 2025-05-26 17:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
 ## 1. 시계열 예측을 위한 대표적인 모델, ARIMA
 
 - 2017년까지 LSTM과 Transformer를 이용한 접근이 ARIMA를 비롯한 통계 모델에게 우세를 점하지 못하고 있음.
@@ -17,7 +25,8 @@
 - 시계열이 자체적으로 반복되거나 추세가 있는 경우에 강함
 - 양의 자기상관이 있으면 AR 모델이 잘 작동
 
-![%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-05-26%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.11.55.png](attachment:%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-05-26%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.11.55.png)
+![250526_5.png](/assets/img/posts/250526_5.png)
+
 
 
 ### Moving Average Model
@@ -29,13 +38,16 @@
 - 단기적인 충격이나 잡음 패턴을 모델링하는 데 유리
 - 시계열이 추세 없이 평균 주위에서 변동한다면 효과적
 
-![image.png](attachment:image.png)
+![250526_6.png](/assets/img/posts/250526_6.png)
+
+
 
 ### ARIMA equation
 
 > 자기회귀 + 이동평균의 조합 + 필요시 차분(d)으로 비정상성 보정까지 하는 강력한 모델
 
-![image.png](attachment:image.png)
+![250526_7.png](/assets/img/posts/250526_7.png)
+
 
 **ARIMA(p,d,q)**
 - `p`: AR lagged values
@@ -155,7 +167,7 @@ plt.show()
 
 
     
-![png](output_18_0.png)
+![output_18_0](/assets/img/posts/output_18_0.png)
     
 
 
@@ -178,8 +190,7 @@ plt.show()
 ```
 
 
-    
-![png](output_20_0.png)
+![output_20_0](/assets/img/posts/output_20_0.png)
     
 
 
@@ -343,7 +354,7 @@ plt.show()
 
 
     
-![png](output_29_0.png)
+![output_29_0](/assets/img/posts/output_29_0.png)
     
 
 
