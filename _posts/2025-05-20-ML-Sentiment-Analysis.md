@@ -28,62 +28,11 @@ from datasets import load_dataset
 imdb = load_dataset("imdb")
 ```
 
-    /usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
-    The secret `HF_TOKEN` does not exist in your Colab secrets.
-    To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
-    You will be able to reuse this secret in all of your notebooks.
-    Please note that authentication is recommended but still optional to access public models or datasets.
-      warnings.warn(
-
-
-
-    README.md:   0%|          | 0.00/7.81k [00:00<?, ?B/s]
-
-
-
-    train-00000-of-00001.parquet:   0%|          | 0.00/21.0M [00:00<?, ?B/s]
-
-
-
-    test-00000-of-00001.parquet:   0%|          | 0.00/20.5M [00:00<?, ?B/s]
-
-
-
-    unsupervised-00000-of-00001.parquet:   0%|          | 0.00/42.0M [00:00<?, ?B/s]
-
-
-
-    Generating train split:   0%|          | 0/25000 [00:00<?, ? examples/s]
-
-
-
-    Generating test split:   0%|          | 0/25000 [00:00<?, ? examples/s]
-
-
-
-    Generating unsupervised split:   0%|          | 0/50000 [00:00<?, ? examples/s]
-
-
 
 ```python
 from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 ```
-
-
-    tokenizer_config.json:   0%|          | 0.00/48.0 [00:00<?, ?B/s]
-
-
-
-    config.json:   0%|          | 0.00/483 [00:00<?, ?B/s]
-
-
-
-    vocab.txt:   0%|          | 0.00/232k [00:00<?, ?B/s]
-
-
-
-    tokenizer.json:   0%|          | 0.00/466k [00:00<?, ?B/s]
 
 
 
@@ -127,17 +76,6 @@ tokenized_imdb = imdb.map(preprocess_function, batched=True)
 ```
 
 
-    Map:   0%|          | 0/25000 [00:00<?, ? examples/s]
-
-
-
-    Map:   0%|          | 0/25000 [00:00<?, ? examples/s]
-
-
-
-    Map:   0%|          | 0/50000 [00:00<?, ? examples/s]
-
-
 - `imdb` 에는 자료가 “텍스트” 형태로 저장되어있고, `tokenized_imdb` 는 자료가 “텍스트 + 숫자” 형태로 저장되어 있음.
   - 즉 `tokenized_imdb` 는 원래데이터 (raw data) 와 전처리된 데이터 (preprocessed data) 가 같이 있음.
 
@@ -151,16 +89,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
 )
 ```
 
-    Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
-    WARNING:huggingface_hub.file_download:Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
-
-
-
-    model.safetensors:   0%|          | 0.00/268M [00:00<?, ?B/s]
-
-
-    Some weights of DistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert/distilbert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight', 'pre_classifier.bias', 'pre_classifier.weight']
-    You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 
 
 ### 2-3. 인공지능 학습
@@ -186,8 +114,6 @@ def compute_metrics(eval_pred):
     return accuracy.compute(predictions=predictions, references=labels)
 ```
 
-
-    Downloading builder script:   0%|          | 0.00/4.20k [00:00<?, ?B/s]
 
 
 
@@ -221,9 +147,6 @@ trainer = Trainer(
 )
 ```
 
-    <ipython-input-30-20bc156c0443>:1: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
-      trainer = Trainer(
-
 
 트레이너를 이용하여 인공지능을 학습시켜보자.
 
@@ -238,40 +161,6 @@ os.environ["WANDB_DISABLED"] = "true"
 ```python
 trainer.train()
 ```
-
-
-
-    <div>
-
-      <progress value='3126' max='3126' style='width:300px; height:20px; vertical-align: middle;'></progress>
-      [3126/3126 49:50, Epoch 2/2]
-    </div>
-    <table border="1" class="dataframe">
-  <thead>
- <tr style="text-align: left;">
-      <th>Epoch</th>
-      <th>Training Loss</th>
-      <th>Validation Loss</th>
-      <th>Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>0.223200</td>
-      <td>0.215903</td>
-      <td>0.918720</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.133300</td>
-      <td>0.255583</td>
-      <td>0.931200</td>
-    </tr>
-  </tbody>
-</table><p>
-
-
 
 
 
