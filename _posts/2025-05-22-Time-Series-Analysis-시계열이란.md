@@ -271,7 +271,8 @@ df1.plot(legend=True, subplots=True, title='diff')
 ![20250523_output_36_1](/assets/img/posts/20250523_output_36_1.png)
     
 
-
+> 본 문서는 Aiffel LMS 강의 내용을 바탕으로 개인 학습 목적으로 정리하였습니다.  
+> 상업적 이용 목적은 없으며, 원 저작권은 Aiffel에 있습니다.
 
     
 ![20250523_output_36_2](/assets/img/posts/20250523_output_36_2.png)
