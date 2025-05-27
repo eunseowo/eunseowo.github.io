@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 시계열 데이터 EDA 
+title: 시계열 데이터 EDA [ACF, PACF]
 date: 2025-05-23 18:04:00 +0900
 categories: [Time_Series_Analysis]
 tags: [Time_Series_Analysis, EDA]
@@ -311,3 +311,6 @@ plt.show()
 
 
 > 시계열 EDA에서 체크해야할 가장 중요한 위험은 ‘허위 상관’ (spurious correlation)이며 이것은 두 개 이상의 변수가 통계적 상관은 있지만 인과관계가 없는 관계를 말한다.
+
+> 본 문서는 Aiffel LMS 강의 내용을 바탕으로 개인 학습 목적으로 정리하였습니다.  
+> 상업적 이용 목적은 없으며, 원 저작권은 Aiffel에 있습니다.
