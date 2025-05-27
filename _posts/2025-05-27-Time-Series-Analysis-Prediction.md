@@ -919,7 +919,7 @@ ARIMA = `AR(Autoregressive)` + `I(Integrated)` + `MA(Moving Average)`
 - `AR`은 시계열의 `Residual`에 해당하는 부분을 모델링한다고 볼 수 있다.
 - 주식값이 항상 일정한 균형 수준을 유지할 것이라고 예측하는 관점이 바로 주식 시계열을 `AR`로 모델링하는 관점이라고 볼 수 있다.
 
-## 7-2. MA(이동평균, Moving Average)
+### 7-2. MA(이동평균, Moving Average)
 
 ![250527_3.png](/assets/img/posts/250527/250527_3.png)
 
