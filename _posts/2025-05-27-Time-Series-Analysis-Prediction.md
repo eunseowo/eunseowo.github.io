@@ -532,14 +532,14 @@ augmented_dickey_fuller_test(ts2)
 - p-value가 1에 가깝다는 것이 이 귀무가설(주어진 시계열 데이터가 안정적이지 않다.) 이 옳다는 직접적인 증거는 아니다. 
     - 하지만 이 귀무가설을 기각할 수는 없게 되었으므로 이 시계열이 안정적인 시계열이라고 말할 수는 없다.
 
-## 6. Stationary하게 만들 방법 
+## 5. Stationary하게 만들 방법 
 
 1. 정성적인 분석을 통해 보다 정상성인 특징을 가지도록 기존의 시계열 데이터를 가공/변환
 2. 시계열 분해(Time series decomposition) 기법을 사용
 
-### 6-1. 보다 Stationary한 시계열로 가공해 가기
+### 5-1. 보다 Stationary한 시계열로 가공해 가기
 
-#### 6-1-1. 로그함수 변환
+#### 5-1-1. 로그함수 변환
 
 - 추이에 따라 분산이 점점 커지고 있음
 - 시계열이 이런 특성을 보일 때는 로그함수로 변환을 하는 것이 도움이 됨.
@@ -585,7 +585,7 @@ augmented_dickey_fuller_test(ts_log)
 - 정성적으로 시간 추이에 따른 분산이 일정해진다.
     - 하지만 가장 두드러지는 문제점은 시간 추이에 따라 평균이 계속 증가하는 것이다.
 
-#### 6-1-2. Moving average 제거 - 추세(Trend) 상쇄
+#### 5-1-2. Moving average 제거 - 추세(Trend) 상쇄
 
 - 시계열 분석에서 위와 같이 시간 추이에 따라 나타나는 평균값 변화를 추세(trend)라고 한다.
 - 이 변화량을 제거해주려면 거꾸로 oving Average, 즉 rolling mean을 구해서 ts_log에서 빼주자.
@@ -747,7 +747,7 @@ augmented_dickey_fuller_test(ts_log_moving_avg_6)
 
 이제 시간의 추이에 따라 평균이 증가하는 trend를 제거하였다. 그러나 여전히 안정적인 시계열이라고 하기에 걸리는 부분이 있다.
 
-#### 6-1-3. 차분(Differencing) - 계절성(Seasonality) 상쇄
+#### 5-1-3. 차분(Differencing) - 계절성(Seasonality) 상쇄
 
 - Trend에는 잡히지 않지만 시계열 데이터 안에 포함된 패턴이 파악되지 않은 주기적 변화는 예측에 방해가 되는 불안정성 요소이다. 
 - 이것은 Moving Average 제거로는 상쇄되지 않는 효과
@@ -829,7 +829,7 @@ augmented_dickey_fuller_test(ts_log_moving_avg_diff)
 
 이동평균을 빼 주어 추세(Trend)를 제거하고 난 시계열에다가 1차 차분(1st order differencing)을 적용하여 Seasonality 효과를 다소 상쇄한 결과, p-value가 약 0.022 에서 0.0019로 1/10 정도로 줄어든 것을 볼 수 있다.
 
-### 6-2. 시계열 분해(Time series decomposition)
+### 5-2. 시계열 분해(Time series decomposition)
 
 - statsmodels 라이브러리 안에는 seasonal_decompose 메서드를 통해 시계열 안에 존재하는 trend, seasonality를 직접 분리해 낼 수 있는 기능이 있다.
 - 이 기능을 활용하면 우리가 위에서 직접 수행했던 moving average 제거, differencing 등을 거치지 않고도 훨씬 안정적인 시계열을 분리해 낼 수 있게 된다.
@@ -903,7 +903,7 @@ augmented_dickey_fuller_test(residual)
 - `Decomposing`을 통해 얻어진 `Residual`은 압도적으로 낮은 `p-value`를 보여 줌.
     - 이 정도면 확실히 예측 가능한 수준의 안정적인 시계열이 얻어졌다고 볼 수 있다.
 
-## 7. ARIMA 모델의 개념
+## 6. ARIMA 모델의 개념
 
 앞에서 시계열 데이터가 `Trend`와 `Seasonality`, `Residual`로 분해되는 것을 확인했다.
 또, `Trend`와 `Seasonality`를 잘 분리해 낸 경우 `Residual`이 예측력 있는 안정적인 시계열 데이터가 되는 것을 확인하였다.
@@ -912,26 +912,26 @@ augmented_dickey_fuller_test(residual)
 
 ARIMA = `AR(Autoregressive)` + `I(Integrated)` + `MA(Moving Average)`
 
-### 7-1. AR(자기회귀, Autoregressive)
+### 6-1. AR(자기회귀, Autoregressive)
 
 ![250527_2.png](/assets/img/posts/250527/250527_2.png)
 
 - `AR`은 시계열의 `Residual`에 해당하는 부분을 모델링한다고 볼 수 있다.
 - 주식값이 항상 일정한 균형 수준을 유지할 것이라고 예측하는 관점이 바로 주식 시계열을 `AR`로 모델링하는 관점이라고 볼 수 있다.
 
-### 7-2. MA(이동평균, Moving Average)
+### 6-2. MA(이동평균, Moving Average)
 
 ![250527_3.png](/assets/img/posts/250527/250527_3.png)
 
 - MA는 시계열의 Trend에 해당하는 부분을 모델링한다고 볼 수 있다.
 - 주식값이 최근의 증감 패턴을 지속할 것이라고 보는 관점이 MA로 모델링하는 관점이라고 볼 수 있다.
 
-### 7-3. I(차분 누적, Integration)
+### 6-3. I(차분 누적, Integration)
 
 - 시점 t에서의 데이터 값이 이전 데이터와 d차 차분의 누적 합이라고 보는 모델
     - I는 시계열의 Seasonality에 해당하는 부분을 모델링한다고 볼 수 있다.
 
-### 7-4. ARIMA 모델의 모수 p, q, d
+### 6-4. ARIMA 모델의 모수 p, q, d
 
 ARIMA의 모수는 아래의 3가지가 있다.
 
@@ -1040,7 +1040,7 @@ augmented_dickey_fuller_test(diff_2)
 - 2차 차분을 구했을 때는 확실히 안정화 상태였지만, 이번 경우에는 d=1로 먼저 시도해 볼 수 있을 것 같다.
     - d 값도 바꿔 가면서 최적의 값을 찾아보자.
 
-### 7-5. 학습 데이터 분리
+### 6-5. 학습 데이터 분리
 
 
 ```python
@@ -1081,7 +1081,7 @@ print(test_data.shape)
     (15,)
 
 
-## ARIMA 모델 훈련과 추론
+## 7. ARIMA 모델 훈련과 추론
 
 
 ```python
