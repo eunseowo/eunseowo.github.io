@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 시계열이란?
+title: 시계열이란? [정상성, KPSS Test, ADF Test, 로그 변환, 차분(diff)]
 date: 2025-05-23 17:04:00 +0900
 categories: [Time_Series_Analysis]
 tags: [Time_Series_Analysis]
@@ -65,10 +65,10 @@ tags: [Time_Series_Analysis]
 ## 3. 정상성이란?
 
 - **정상성(Stationarity)** : '시간에 상관없이 시계열이 일정한 성질'을 띠는 시계열을 지칭하는 것으로, '시간에 상관없이 일정한 것'을 의미한다.
-    - **강정상성(Strictly Stationary)** : 거의 모든 시간의 흐름에 따른 시계열의 확률적인 성질들이 불변인 것을 의미함.
+    - 강정상성(Strictly Stationary) : 거의 모든 시간의 흐름에 따른 시계열의 확률적인 성질들이 불변인 것을 의미함.
         - 모든 적률(moments)이 시간과 무관하게 일정한 시계열 (기저를 이루는 확률분포가 시간에 무관하게 언제나 일정)
             - **기저(Basis)** : 분석 대상이 되는 시계열 데이터를 이루는 확률적 과정을 의미함.
-    - **약정상성(Weak Stationarity)** : 시간의 흐름에 따른 일정한 평균, 분산, 공분산만을 갖는 확률과정
+    - 약정상성(Weak Stationarity) : 시간의 흐름에 따른 일정한 평균, 분산, 공분산만을 갖는 확률과정
 ---
                
 - **비정상성(Non-Stationary)** : 정상성과 반대로 시간의 흐름에 따라 통계적 특성이 변화하는 것
