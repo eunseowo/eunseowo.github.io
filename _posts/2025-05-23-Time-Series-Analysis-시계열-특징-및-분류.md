@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 시계열 특징 및 분류
+title: 시계열 특징 및 분류 [tsfresh, Logistic Regression]
 date: 2025-05-23 19:04:00 +0900
 categories: [Time_Series_Analysis]
 tags: [Time_Series_Analysis]
@@ -33,31 +33,6 @@ tags: [Time_Series_Analysis]
 !pip install tsfresh
 ```
 
-    Requirement already satisfied: tsfresh in /opt/conda/lib/python3.9/site-packages (0.21.0)
-    Requirement already satisfied: requests>=2.9.1 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (2.26.0)
-    Requirement already satisfied: scipy>=1.2.0 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.13.1)
-    Requirement already satisfied: pandas>=0.25.0 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.3.3)
-    Requirement already satisfied: numpy>=1.15.1 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.22.4)
-    Requirement already satisfied: statsmodels>=0.13 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (0.13.0)
-    Requirement already satisfied: patsy>=0.4.1 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (0.5.2)
-    Requirement already satisfied: tqdm>=4.10.0 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (4.62.3)
-    Requirement already satisfied: pywavelets in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.2.0)
-    Requirement already satisfied: scikit-learn>=0.22.0 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.0)
-    Requirement already satisfied: cloudpickle in /opt/conda/lib/python3.9/site-packages (from tsfresh) (2.0.0)
-    Requirement already satisfied: stumpy>=1.7.2 in /opt/conda/lib/python3.9/site-packages (from tsfresh) (1.13.0)
-    Requirement already satisfied: pytz>=2017.3 in /opt/conda/lib/python3.9/site-packages (from pandas>=0.25.0->tsfresh) (2021.3)
-    Requirement already satisfied: python-dateutil>=2.7.3 in /opt/conda/lib/python3.9/site-packages (from pandas>=0.25.0->tsfresh) (2.8.2)
-    Requirement already satisfied: six in /opt/conda/lib/python3.9/site-packages (from patsy>=0.4.1->tsfresh) (1.16.0)
-    Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.9/site-packages (from requests>=2.9.1->tsfresh) (2021.10.8)
-    Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.9/site-packages (from requests>=2.9.1->tsfresh) (2.10)
-    Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests>=2.9.1->tsfresh) (1.26.7)
-    Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests>=2.9.1->tsfresh) (2.0.12)
-    Requirement already satisfied: threadpoolctl>=2.0.0 in /opt/conda/lib/python3.9/site-packages (from scikit-learn>=0.22.0->tsfresh) (3.1.0)
-    Requirement already satisfied: joblib>=0.11 in /opt/conda/lib/python3.9/site-packages (from scikit-learn>=0.22.0->tsfresh) (1.1.0)
-    Requirement already satisfied: numba>=0.57.1 in /opt/conda/lib/python3.9/site-packages (from stumpy>=1.7.2->tsfresh) (0.60.0)
-    Requirement already satisfied: llvmlite<0.44,>=0.43.0dev0 in /opt/conda/lib/python3.9/site-packages (from numba>=0.57.1->stumpy>=1.7.2->tsfresh) (0.43.0)
-    [33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv[0m[33m
-    [0m
 
 
 ```python
@@ -1606,3 +1581,6 @@ classification_report(y_test, logistic.predict(minimal_features_test), target_na
 | 재현율 (Recall)    | 실제 양성 중에서 양성으로 예측한 비율. 놓치는 양성 줄이는 데 중요.     |
 | F1-score     | 정밀도와 재현율의 조화 평균. 불균형 데이터에서 성능 평가에 적합.         |
 
+
+> 본 문서는 Aiffel LMS 강의 내용을 바탕으로 개인 학습 목적으로 정리하였습니다.  
+> 상업적 이용 목적은 없으며, 원 저작권은 Aiffel에 있습니다.
