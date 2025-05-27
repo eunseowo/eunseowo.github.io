@@ -1,3 +1,11 @@
+---
+layout: post
+title: 어제 오른 내 주식, 과연 내일은?
+date: 2025-05-27 17:04:00 +0900
+categories: [Time_Series_Analysis]
+tags: [Time_Series_Analysis]
+---
+
 ## 1. 미래 예측
 
 시게열: 시간 순서대로 발생한 데이터의 수열
@@ -26,7 +34,7 @@
 
 *개념 정리*
 
-![image.png](attachment:image.png)
+![250527_1.png](/assets/img/posts/250527/250527_1.png)
 
 > 직전 5년 치 판매량 X(t-4), X(t-3), X(t-2), X(t-1), X(t)를 가지고 X(t+1)이 얼마일지 예측해보자.
 
@@ -237,9 +245,7 @@ plt.plot(ts1)
 
 
 
-    
-![png](output_17_1.png)
-    
+![output_17_1](/assets/img/posts/250527/output_17_1.png)
 
 
 - 분석에 들어가기 전에 잊지 말고 **결측치 유무** 확인을 하자.
@@ -287,7 +293,7 @@ plt.plot(ts1)
 
 
     
-![png](output_21_2.png)
+![output_21_2](/assets/img/posts/250527/output_21_2.png)
     
 
 
@@ -324,7 +330,7 @@ plot_rolling_statistics(ts1, window=12)
 
 
     
-![png](output_24_0.png)
+![output_24_0](/assets/img/posts/250527/output_24_0.png)
     
 
 
@@ -345,7 +351,7 @@ plot_rolling_statistics(ts1, window=365)
 
 
     
-![png](output_26_0.png)
+![output_26_0](/assets/img/posts/250527/output_26_0.png)
     
 
 
@@ -445,7 +451,7 @@ plt.plot(ts2)
 
 
     
-![png](output_32_1.png)
+![output_32_1](/assets/img/posts/250527/output_32_1.png)
     
 
 
@@ -460,7 +466,7 @@ plot_rolling_statistics(ts2, window=12)
 
 
     
-![png](output_34_0.png)
+![output_34_0](/assets/img/posts/250527/output_34_0.png)
     
 
 
@@ -553,7 +559,7 @@ plt.plot(ts_log)
 
 
     
-![png](output_46_1.png)
+![output_46_1](/assets/img/posts/250527/output_46_1.png)
     
 
 
@@ -599,8 +605,7 @@ plt.plot(moving_avg, color='red')
 
 
 
-    
-![png](output_52_1.png)
+![output_52_1](/assets/img/posts/250527/output_52_1.png)
     
 
 
@@ -674,7 +679,7 @@ plot_rolling_statistics(ts_log_moving_avg)
 
 
     
-![png](output_57_0.png)
+![output_57_0](/assets/img/posts/250527/output_57_0.png)
     
 
 
@@ -716,7 +721,7 @@ plot_rolling_statistics(ts_log_moving_avg_6)
 
 
     
-![png](output_61_0.png)
+![output_61_0](/assets/img/posts/250527/output_61_0.png)
     
 
 
@@ -771,8 +776,7 @@ plt.plot(ts_log_moving_avg_shift, color='green')
 
 
     
-![png](output_66_1.png)
-    
+![output_66_1](/assets/img/posts/250527/output_66_1.png)
 
 
 
@@ -791,9 +795,7 @@ plt.plot(ts_log_moving_avg_diff)
 
 
 
-    
-![png](output_67_1.png)
-    
+![output_67_1](/assets/img/posts/250527/output_67_1.png)
 
 
 
@@ -804,7 +806,7 @@ plot_rolling_statistics(ts_log_moving_avg_diff)
 
 
     
-![png](output_68_0.png)
+![output_68_0](/assets/img/posts/250527/output_68_0.png)
     
 
 
@@ -861,8 +863,7 @@ plt.tight_layout()
 ```
 
 
-    
-![png](output_73_0.png)
+![output_73_0](/assets/img/posts/250527/output_73_0.png)
     
 
 
@@ -878,7 +879,7 @@ plot_rolling_statistics(residual)
 
 
     
-![png](output_75_0.png)
+![output_75_0](/assets/img/posts/250527/output_75_0.png)
     
 
 
@@ -913,14 +914,14 @@ ARIMA = `AR(Autoregressive)` + `I(Integrated)` + `MA(Moving Average)`
 
 ### 7-1. AR(자기회귀, Autoregressive)
 
-![image.png](attachment:image.png)
+![250527_2.png](/assets/img/posts/250527/250527_2.png)
 
 - `AR`은 시계열의 `Residual`에 해당하는 부분을 모델링한다고 볼 수 있다.
 - 주식값이 항상 일정한 균형 수준을 유지할 것이라고 예측하는 관점이 바로 주식 시계열을 `AR`로 모델링하는 관점이라고 볼 수 있다.
 
 ## 7-2. MA(이동평균, Moving Average)
 
-![image.png](attachment:image.png)
+![250527_3.png](/assets/img/posts/250527/250527_3.png)
 
 - MA는 시계열의 Trend에 해당하는 부분을 모델링한다고 볼 수 있다.
 - 주식값이 최근의 증감 패턴을 지속할 것이라고 보는 관점이 MA로 모델링하는 관점이라고 볼 수 있다.
@@ -961,13 +962,12 @@ plt.show()
 
 
     
-![png](output_90_0.png)
+![output_90_0](/assets/img/posts/250527/output_90_0.png)
     
 
 
 
-    
-![png](output_90_1.png)
+![output_90_1](/assets/img/posts/250527/output_90_1.png)
     
 
 
@@ -1007,7 +1007,7 @@ augmented_dickey_fuller_test(diff_1)
 
 
     
-![png](output_92_1.png)
+![output_92_1](/assets/img/posts/250527/output_92_1.png)
     
 
 
@@ -1033,8 +1033,7 @@ augmented_dickey_fuller_test(diff_2)
 
 
     
-![png](output_93_1.png)
-    
+![output_93_1](/assets/img/posts/250527/output_93_1.png)
 
 
 - 1차 차분을 구했을 때 약간 애매한 수준의 안정화 상태를 보였다.
@@ -1063,8 +1062,7 @@ plt.legend()
 
 
     
-![png](output_96_1.png)
-    
+![output_96_1](/assets/img/posts/250527/output_96_1.png)
 
 
 
@@ -1156,7 +1154,7 @@ plt.legend()
 
 
     
-![png](output_100_1.png)
+![output_100_1](/assets/img/posts/250527/output_100_1.png)
     
 
 
@@ -1181,12 +1179,12 @@ plt.show()
 
 
     
-![png](output_101_0.png)
+![output_101_0](/assets/img/posts/250527/output_101_0.png)
     
 
 
 시계열 데이터를 로그 변환하여 사용했으므로 다시 지수 변환해야 정확한 오차를 계산할 수 있다.
-- `np.exp()`를 통해 전부 원본 스케일로 돌린 후 `MSE`, `MAE`, `RMSE`, `MAPE`를 계산합니다.
+- `np.exp()`를 통해 전부 원본 스케일로 돌린 후 `MSE`, `MAE`, `RMSE`, `MAPE`를 계산하자.
 
 
 ```python
@@ -1213,3 +1211,6 @@ print('MAPE: {:.2f}%'.format(mape*100))
 
 
 - 최종적으로 예측 모델의 메트릭으로 활용하기에 적당한 MAPE 기준으로 2.69%을 보인다.
+
+> 본 문서는 Aiffel LMS 강의 내용을 바탕으로 개인 학습 목적으로 정리하였습니다.  
+> 상업적 이용 목적은 없으며, 원 저작권은 Aiffel에 있습니다.
