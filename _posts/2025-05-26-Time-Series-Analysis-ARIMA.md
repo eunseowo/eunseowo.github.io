@@ -426,3 +426,5 @@ print(res.summary())
     Warnings:
     [1] Covariance matrix calculated using the outer product of gradients (complex-step).
 
+> 본 문서는 Aiffel LMS 강의 내용을 바탕으로 개인 학습 목적으로 정리하였습니다.  
+> 상업적 이용 목적은 없으며, 원 저작권은 Aiffel에 있습니다.
