@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 어제 오른 내 주식, 과연 내일은?
-date: 2025-05-27 12:04:00 +0900
+date: 2025-05-28 12:04:00 +0900
 categories: [Time_Series_Analysis]
 tags: [Time_Series_Analysis]
 ---
