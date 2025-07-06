@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [모두의 연구소 데이터 사이언티스트 4기] 랭체인톤 회고
+title: "[모두의 연구소 데이터 사이언티스트 4기] 랭체인톤 회고"
 date: 2025-07-06 17:04:00 +0900
 categories: [Retrospective, LangChainThon]
 tags: [LangChain, RAG, LLM]
