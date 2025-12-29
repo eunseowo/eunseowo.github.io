@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "[GEG DevFest incheon 2025] 후기"
+title: "[GDG DevFest incheon 2025] 후기"
 date: 2025-12-13 17:04:00 +0900
 categories: [Retrospective, Event]
+tags: [GDG, vibecoding, LLM]
+
 ---
 
 🎫 [DevFest](https://www.ticketa.co/events/40)
